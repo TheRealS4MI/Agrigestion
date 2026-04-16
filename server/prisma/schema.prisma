@@ -1,0 +1,83 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  FARMER
+  WORKER
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(FARMER)
+  farmId       String
+  farm         Farm     @relation(fields: [farmId], references: [id], onDelete: Cascade)
+  createdAt    DateTime @default(now())
+}
+
+model Farm {
+  id        String   @id @default(cuid())
+  name      String
+  users     User[]
+  parcels   Parcel[]
+  expenses  Expense[]
+  createdAt DateTime @default(now())
+}
+
+model Parcel {
+  id        String    @id @default(cuid())
+  name      String
+  city      String?
+  soilType  String?
+  farmId    String
+  farm      Farm      @relation(fields: [farmId], references: [id], onDelete: Cascade)
+  cultures  Culture[]
+  createdAt DateTime  @default(now())
+}
+
+model Culture {
+  id         String    @id @default(cuid())
+  plantType  String
+  seedType   String?
+  sowingDate DateTime
+  notes      String?
+  parcelId   String
+  parcel     Parcel    @relation(fields: [parcelId], references: [id], onDelete: Cascade)
+  harvests   Harvest[]
+  expenses   Expense[]
+  createdAt  DateTime  @default(now())
+}
+
+model Harvest {
+  id         String   @id @default(cuid())
+  cultureId  String
+  culture    Culture  @relation(fields: [cultureId], references: [id], onDelete: Cascade)
+  date       DateTime
+  quantity   Float
+  unit       String   @default("kg")
+  quality    String?
+  salePrice  Float?
+  createdAt  DateTime @default(now())
+}
+
+model Expense {
+  id         String   @id @default(cuid())
+  farmId     String
+  farm       Farm     @relation(fields: [farmId], references: [id], onDelete: Cascade)
+  cultureId  String?
+  culture    Culture? @relation(fields: [cultureId], references: [id], onDelete: SetNull)
+  label      String
+  category   String
+  amount     Float
+  date       DateTime
+  createdAt  DateTime @default(now())
+}
