@@ -134,9 +134,15 @@ export default function Dashboard() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#2d3b32" />
                 <XAxis dataKey="name" tick={{ fill: "#9cb0a3", fontSize: 11 }} />
                 <YAxis tick={{ fill: "#9cb0a3", fontSize: 11 }} tickFormatter={(v) => `${v / 1000}k`} />
-                <Tooltip formatter={(v: number) => fmt(v)} />
+                <Tooltip formatter={(v: number) => fmt(v)} cursor={false} />
                 <Legend />
-                <Bar dataKey="profit" name="Marge (MAD)" fill="#6ee7a0" radius={[6, 6, 0, 0]} />
+                <Bar
+                  dataKey="profit"
+                  name="Marge (MAD)"
+                  fill="#6ee7a0"
+                  radius={[6, 6, 0, 0]}
+                  activeBar={{ fill: "#a7f3d0" }}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
