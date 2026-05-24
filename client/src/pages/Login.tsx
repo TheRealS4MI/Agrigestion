@@ -30,10 +30,6 @@ export default function Login() {
       <div className="card auth-card">
         <div className="brand" style={{ marginBottom: "1rem" }}>
           <img src={logo} alt="AgriGestion" className="brand-logo" />
-<<<<<<< HEAD
-=======
-          <span style={{ fontSize: "1.25rem" }}>AgriGestion</span>
->>>>>>> update-ui-design
         </div>
         <h1 style={{ fontSize: "1.35rem" }}>Connexion</h1>
         <p className="sub">Accédez à la gestion de votre exploitation.</p>
@@ -63,9 +59,7 @@ export default function Login() {
             {pending ? "Connexion…" : "Se connecter"}
           </button>
         </form>
-        <p className="muted" style={{ marginTop: "1rem", fontSize: "0.9rem" }}>
-          Pas encore de compte ? <Link to="/register">Créer un compte</Link>
-        </p>
+
         <p className="muted" style={{ marginTop: "0.75rem", fontSize: "0.8rem" }}>
           Démo : admin@agrigestion.local / admin123
         </p>

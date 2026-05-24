@@ -72,15 +72,21 @@ textarea {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-<<<<<<< HEAD
+.brand:hover {
+  text-decoration: none;
+}
+
 .brand-logo {
-  height: 120px;
+  height: 140px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.2s ease;
+  filter: brightness(0) saturate(100%) invert(79%) sepia(21%) saturate(1008%) hue-rotate(106deg) brightness(96%) contrast(91%) drop-shadow(0 0 8px rgba(110, 231, 160, 0.25));
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
+
 .brand-logo:hover {
   transform: scale(1.05);
+  filter: brightness(0) saturate(100%) invert(79%) sepia(21%) saturate(1008%) hue-rotate(106deg) brightness(96%) contrast(91%) drop-shadow(0 0 12px rgba(110, 231, 160, 0.45));
 }
 
 .auth-card .brand {
@@ -89,30 +95,10 @@ textarea {
   text-align: center;
   gap: 0.5rem;
 }
-.auth-card .brand-logo {
-  height: 120px;
-  margin-bottom: 0.5rem;
-}
 
-=======
-.brand:hover {
-  text-decoration: none;
-}
->>>>>>> update-ui-design
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
-  display: grid;
-  place-items: center;
-  color: #0a120e;
-  font-size: 1.1rem;
-}
-.brand-logo {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
+.auth-card .brand-logo {
+  height: 160px;
+  margin-bottom: 0.5rem;
 }
 
 .nav {
@@ -125,11 +111,7 @@ textarea {
   border-radius: 999px;
   color: var(--muted);
   text-decoration: none;
-<<<<<<< HEAD
-  font-size: 1.2rem;
-=======
-  font-size: 1.25rem;
->>>>>>> update-ui-design
+  font-size: 1.35rem;
 }
 .nav a:hover {
   color: var(--text);

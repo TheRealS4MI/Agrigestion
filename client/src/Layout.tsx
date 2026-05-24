@@ -7,15 +7,9 @@ export default function Layout() {
   return (
     <div className="app-shell">
       <header className="topbar">
-<<<<<<< HEAD
         <NavLink to="/" className="brand">
           <img src={logo} alt="AgriGestion" className="brand-logo" />
         </NavLink>
-=======
-        <Link to="/" className="brand">
-          <img src={logo} alt="AgriGestion" className="brand-logo" />
-        </Link>
->>>>>>> update-ui-design
         <nav className="nav">
           {user?.role !== "WORKER" && (
             <NavLink to="/" end>
