@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "./auth";
 import logo from "./logo.png";
 
@@ -7,9 +7,15 @@ export default function Layout() {
   return (
     <div className="app-shell">
       <header className="topbar">
+<<<<<<< HEAD
         <NavLink to="/" className="brand">
           <img src={logo} alt="AgriGestion" className="brand-logo" />
         </NavLink>
+=======
+        <Link to="/" className="brand">
+          <img src={logo} alt="AgriGestion" className="brand-logo" />
+        </Link>
+>>>>>>> update-ui-design
         <nav className="nav">
           {user?.role !== "WORKER" && (
             <NavLink to="/" end>
@@ -23,9 +29,9 @@ export default function Layout() {
           {user?.role === "ADMIN" && <NavLink to="/admin">Administration</NavLink>}
         </nav>
         <div className="row-actions">
-          <span className="muted" style={{ fontSize: "0.9rem" }}>
+          <span className="muted" style={{ fontSize: "1.2rem", display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
             {user?.name}
-            <span className="badge" style={{ marginLeft: "0.5rem" }}>
+            <span className="badge">
               {user?.role}
             </span>
           </span>

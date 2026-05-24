@@ -32,6 +32,10 @@ export default function Register() {
       <div className="card auth-card">
         <div className="brand" style={{ marginBottom: "1rem" }}>
           <img src={logo} alt="AgriGestion" className="brand-logo" />
+<<<<<<< HEAD
+=======
+          <span style={{ fontSize: "1.25rem" }}>AgriGestion</span>
+>>>>>>> update-ui-design
         </div>
         <h1 style={{ fontSize: "1.35rem" }}>Créer un compte</h1>
         <p className="sub">Nouvelle exploitation — vous serez enregistré comme agriculteur.</p>

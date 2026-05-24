@@ -56,7 +56,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-bottom: 1px solid var(--border);
   background: rgba(26, 34, 28, 0.85);
   backdrop-filter: blur(8px);
@@ -72,6 +72,7 @@ textarea {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
+<<<<<<< HEAD
 .brand-logo {
   height: 120px;
   width: auto;
@@ -93,6 +94,11 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
+=======
+.brand:hover {
+  text-decoration: none;
+}
+>>>>>>> update-ui-design
 .brand-mark {
   width: 36px;
   height: 36px;
@@ -103,6 +109,11 @@ textarea {
   color: #0a120e;
   font-size: 1.1rem;
 }
+.brand-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
 
 .nav {
   display: flex;
@@ -110,11 +121,15 @@ textarea {
   flex-wrap: wrap;
 }
 .nav a {
-  padding: 0.45rem 0.85rem;
+  padding: 0.6rem 1.1rem;
   border-radius: 999px;
   color: var(--muted);
   text-decoration: none;
+<<<<<<< HEAD
   font-size: 1.2rem;
+=======
+  font-size: 1.25rem;
+>>>>>>> update-ui-design
 }
 .nav a:hover {
   color: var(--text);
@@ -124,6 +139,16 @@ textarea {
 .nav a.active {
   color: #0a120e;
   background: var(--accent);
+}
+
+.topbar .btn {
+  font-size: 1.15rem;
+  padding: 0.65rem 1.3rem;
+}
+
+.topbar .badge {
+  font-size: 0.95rem;
+  padding: 0.25rem 0.65rem;
 }
 
 main.page {

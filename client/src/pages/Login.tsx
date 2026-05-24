@@ -30,6 +30,10 @@ export default function Login() {
       <div className="card auth-card">
         <div className="brand" style={{ marginBottom: "1rem" }}>
           <img src={logo} alt="AgriGestion" className="brand-logo" />
+<<<<<<< HEAD
+=======
+          <span style={{ fontSize: "1.25rem" }}>AgriGestion</span>
+>>>>>>> update-ui-design
         </div>
         <h1 style={{ fontSize: "1.35rem" }}>Connexion</h1>
         <p className="sub">Accédez à la gestion de votre exploitation.</p>
