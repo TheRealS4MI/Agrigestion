@@ -7,9 +7,9 @@ export default function Layout() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <div className="brand">
+        <NavLink to="/" className="brand">
           <img src={logo} alt="AgriGestion" className="brand-logo" />
-        </div>
+        </NavLink>
         <nav className="nav">
           {user?.role !== "WORKER" && (
             <NavLink to="/" end>
