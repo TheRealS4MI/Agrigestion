@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../auth";
+import logo from "../logo.png";
 
 export default function Login() {
   const { user, login } = useAuth();
@@ -28,7 +29,7 @@ export default function Login() {
     <div className="auth-page">
       <div className="card auth-card">
         <div className="brand" style={{ marginBottom: "1rem" }}>
-          <div className="brand-mark">🌾</div>
+          <img src={logo} alt="AgriGestion" className="brand-logo" />
           <span style={{ fontSize: "1.25rem" }}>AgriGestion</span>
         </div>
         <h1 style={{ fontSize: "1.35rem" }}>Connexion</h1>

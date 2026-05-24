@@ -163,7 +163,7 @@ export default function Dashboard() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#2d3b32" />
                 <XAxis dataKey="name" tick={{ fill: "#9cb0a3", fontSize: 11 }} />
                 <YAxis tick={{ fill: "#9cb0a3", fontSize: 11 }} tickFormatter={(v) => `${v / 1000}k`} />
-                <Tooltip content={<CustomTooltip />} cursor={false} />
+                <Tooltip formatter={(v: number) => fmt(v)} cursor={false} />
                 <Legend />
                 <Bar
                   dataKey="profit"

@@ -72,6 +72,9 @@ textarea {
   font-weight: 700;
   letter-spacing: -0.02em;
 }
+.brand:hover {
+  text-decoration: none;
+}
 .brand-mark {
   width: 36px;
   height: 36px;
@@ -81,6 +84,11 @@ textarea {
   place-items: center;
   color: #0a120e;
   font-size: 1.1rem;
+}
+.brand-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 }
 
 .nav {
@@ -289,3 +297,26 @@ tr:last-child td {
   width: 100%;
   max-width: 420px;
 }
+
+/* Recharts Tooltip Dark Mode Styling */
+.recharts-default-tooltip {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  padding: 8px 12px !important;
+}
+
+.recharts-tooltip-label {
+  color: var(--text) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 4px !important;
+}
+
+.recharts-tooltip-item {
+  color: var(--accent) !important;
+  font-size: 0.85rem !important;
+  padding: 2px 0 !important;
+}
+
