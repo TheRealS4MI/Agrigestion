@@ -1,5 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "./auth";
+import logo from "./logo.png";
 
 export default function Layout() {
   const { user, logout } = useAuth();
@@ -7,10 +8,7 @@ export default function Layout() {
     <div className="app-shell">
       <header className="topbar">
         <div className="brand">
-          <div className="brand-mark" aria-hidden>
-            🌾
-          </div>
-          <span>AgriGestion</span>
+          <img src={logo} alt="AgriGestion" className="brand-logo" />
         </div>
         <nav className="nav">
           {user?.role !== "WORKER" && (

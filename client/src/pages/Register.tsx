@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useAuth } from "../auth";
+import logo from "../logo.png";
 
 export default function Register() {
   const { user, register } = useAuth();
@@ -30,8 +31,7 @@ export default function Register() {
     <div className="auth-page">
       <div className="card auth-card">
         <div className="brand" style={{ marginBottom: "1rem" }}>
-          <div className="brand-mark">🌾</div>
-          <span style={{ fontSize: "1.25rem" }}>AgriGestion</span>
+          <img src={logo} alt="AgriGestion" className="brand-logo" />
         </div>
         <h1 style={{ fontSize: "1.35rem" }}>Créer un compte</h1>
         <p className="sub">Nouvelle exploitation — vous serez enregistré comme agriculteur.</p>
