@@ -40,6 +40,35 @@ function fmt(n: number) {
   }).format(n);
 }
 
+const CustomTooltip = ({ active, payload, label }: any) => {
+  if (active && payload && payload.length) {
+    return (
+      <div
+        style={{
+          backgroundColor: "var(--surface)",
+          border: "1px solid var(--border)",
+          padding: "0.75rem 1rem",
+          borderRadius: "var(--radius)",
+          boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3)",
+        }}
+      >
+        {label && (
+          <p style={{ margin: 0, fontWeight: 600, color: "var(--text)", fontSize: "0.9rem", marginBottom: "0.25rem" }}>
+            {label}
+          </p>
+        )}
+        {payload.map((pld: any, index: number) => (
+          <p key={index} style={{ margin: "0.15rem 0 0", color: pld.fill || pld.color || "var(--accent)", fontSize: "0.85rem" }}>
+            <span style={{ marginRight: "0.5rem" }}>●</span>
+            {pld.name}: <span style={{ fontWeight: 600, color: "var(--text)" }}>{fmt(pld.value)}</span>
+          </p>
+        ))}
+      </div>
+    );
+  }
+  return null;
+};
+
 export default function Dashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [err, setErr] = useState("");
@@ -115,7 +144,7 @@ export default function Dashboard() {
                     <Cell key={i} fill={COLORS[i % COLORS.length]} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(v: number) => fmt(v)} />
+                <Tooltip content={<CustomTooltip />} />
               </PieChart>
             </ResponsiveContainer>
           </div>
@@ -134,9 +163,15 @@ export default function Dashboard() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#2d3b32" />
                 <XAxis dataKey="name" tick={{ fill: "#9cb0a3", fontSize: 11 }} />
                 <YAxis tick={{ fill: "#9cb0a3", fontSize: 11 }} tickFormatter={(v) => `${v / 1000}k`} />
-                <Tooltip formatter={(v: number) => fmt(v)} />
+                <Tooltip content={<CustomTooltip />} cursor={false} />
                 <Legend />
-                <Bar dataKey="profit" name="Marge (MAD)" fill="#6ee7a0" radius={[6, 6, 0, 0]} />
+                <Bar
+                  dataKey="profit"
+                  name="Marge (MAD)"
+                  fill="#6ee7a0"
+                  radius={[6, 6, 0, 0]}
+                  activeBar={{ fill: "#a7f3d0" }}
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -151,7 +186,7 @@ export default function Dashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="#2d3b32" />
               <XAxis dataKey="month" tick={{ fill: "#9cb0a3", fontSize: 11 }} />
               <YAxis tick={{ fill: "#9cb0a3", fontSize: 11 }} />
-              <Tooltip formatter={(v: number) => fmt(v)} />
+              <Tooltip content={<CustomTooltip />} />
               <Legend />
               <Line type="monotone" dataKey="revenue" name="Revenus" stroke="#6ee7a0" strokeWidth={2} dot={false} />
               <Line type="monotone" dataKey="expenses" name="Dépenses" stroke="#fbbf24" strokeWidth={2} dot={false} />
