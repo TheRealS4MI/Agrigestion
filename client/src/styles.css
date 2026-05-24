@@ -73,7 +73,7 @@ textarea {
   letter-spacing: -0.02em;
 }
 .brand-logo {
-  height: 44px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   transition: transform 0.2s ease;
@@ -89,7 +89,7 @@ textarea {
   gap: 0.5rem;
 }
 .auth-card .brand-logo {
-  height: 80px;
+  height: 120px;
   margin-bottom: 0.5rem;
 }
 
@@ -114,7 +114,7 @@ textarea {
   border-radius: 999px;
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.2rem;
 }
 .nav a:hover {
   color: var(--text);
