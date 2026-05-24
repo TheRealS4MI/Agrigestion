@@ -60,9 +60,7 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="muted" style={{ marginTop: "0.75rem", fontSize: "0.8rem" }}>
-          Démo : admin@agrigestion.local / admin123
-        </p>
+
       </div>
     </div>
   );
